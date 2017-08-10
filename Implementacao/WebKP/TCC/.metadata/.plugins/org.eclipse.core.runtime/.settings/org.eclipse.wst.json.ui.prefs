@@ -1,9 +1,0 @@
-COLON=\#f6f3e8 | null | false
-COMMA=\#f6f3e8 | null | false
-CURLY_BRACE=\#f6f3e8 | null | false
-OBJECT_KEY=\#cae682 | null | false
-VALUE_BOOLEAN=\#8ac6f2 | null | false
-VALUE_NULL=\#8ac6f2 | null | false
-VALUE_NUMBER=\#f08080 | null | false
-VALUE_STRING=\#95e454 | null | false | true
-eclipse.preferences.version=1

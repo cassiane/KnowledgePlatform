@@ -1,7 +1,0 @@
-package br.com.knowl.platform.action;
-
-@Controller
-@RequestMapping(value="/usuario/")
-public class UsuarioAction {
-
-}

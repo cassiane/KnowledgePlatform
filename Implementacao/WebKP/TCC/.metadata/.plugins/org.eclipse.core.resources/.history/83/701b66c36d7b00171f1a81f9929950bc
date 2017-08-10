@@ -1,6 +1,0 @@
-package modelo;
-
-@Entity
-public class Votacao {
-
-}

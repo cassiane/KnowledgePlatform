@@ -1,5 +1,0 @@
-package br.com.knowl.platform.exception;
-
-public class AssuntoGeralException extends Exception{
-
-}
