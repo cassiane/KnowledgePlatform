@@ -1,0 +1,28 @@
+package br.com.knowl.platform.modelo;
+
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "usuario")
+public class Usuario extends BaseEntity implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7394858398943280639L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idUsuario;
+	@Column(name = "primeiroNome")
+	private String primeiroNome;
+	@Column(name = "sobrenome")
+	private String sobrenome;
+	@OneToOne
+	@JoinColumn(name = "idProfissao")
+	private Profissao profissao;
+	@ManyToMany
+	Votacao votacao;
+}

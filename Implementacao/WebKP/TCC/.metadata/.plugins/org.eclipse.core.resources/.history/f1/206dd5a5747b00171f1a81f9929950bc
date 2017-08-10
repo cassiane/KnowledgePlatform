@@ -1,0 +1,12 @@
+package br.com.knowl.platform.modelo;
+
+import javax.persistence.*;
+
+@Entity
+public class Usuario {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idUsuario;
+	
+}

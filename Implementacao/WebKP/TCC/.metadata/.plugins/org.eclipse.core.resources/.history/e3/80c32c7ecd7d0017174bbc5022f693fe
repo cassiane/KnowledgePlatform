@@ -1,0 +1,6 @@
+package br.com.knowl.platform.dao;
+
+@Service
+public interface IProfissaoDao {
+
+}

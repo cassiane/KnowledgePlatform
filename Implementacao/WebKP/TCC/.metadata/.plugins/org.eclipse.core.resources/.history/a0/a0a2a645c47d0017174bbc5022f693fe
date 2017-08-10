@@ -1,0 +1,32 @@
+package br.com.knowl.platform.business;
+
+import br.com.knowl.platform.exception.BusinessException;
+import br.com.knowl.platform.modelo.AssuntoGeral;
+
+public class AssuntoGeralBusiness implements IBusiness<AssuntoGeral>{
+
+	@Override
+	public void salvar(AssuntoGeral model) throws BusinessException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void excluir(AssuntoGeral model) throws BusinessException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public AssuntoGeral obterPorId(AssuntoGeral filtro) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable<AssuntoGeral> pesquisar(AssuntoGeral filtros) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

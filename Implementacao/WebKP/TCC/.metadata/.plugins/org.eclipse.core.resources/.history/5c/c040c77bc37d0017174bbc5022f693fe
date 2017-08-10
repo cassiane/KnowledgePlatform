@@ -1,0 +1,19 @@
+package br.com.knowl.platform.modelo;
+
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@Entity 
+public class Experiencia extends BaseEntity implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6974095901534005343L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idExperiencia;
+	@Column(name = "descricao")
+	private String descricao;
+}

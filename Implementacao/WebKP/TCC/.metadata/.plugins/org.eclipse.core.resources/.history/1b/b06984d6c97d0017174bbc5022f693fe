@@ -1,0 +1,5 @@
+package br.com.knowl.platform.business;
+
+public class UsuarioBusiness {
+
+}

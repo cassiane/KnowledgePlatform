@@ -1,0 +1,11 @@
+package br.com.knowl.platform.dao;
+
+import org.springframework.stereotype.Service;
+
+import br.com.knowl.platform.modelo.Profissao;
+
+@Service
+public interface IProfissaoDao {
+	Profissao findById(int id);
+	Iterable<Profissao> findByDescricao(String descricao);
+}

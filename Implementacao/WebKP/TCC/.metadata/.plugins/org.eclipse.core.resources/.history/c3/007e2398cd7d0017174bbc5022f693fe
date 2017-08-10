@@ -1,0 +1,45 @@
+package br.com.knowl.platform.business;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import br.com.knowl.platform.dao.IUsuarioDao;
+import br.com.knowl.platform.modelo.Profissao;
+import br.com.knowl.platform.modelo.Usuario;
+
+@Service
+public class AppBusiness implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8669326857228226801L;
+	
+	private IUsuarioDao usuarioDao;
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	public void configureAppDataBase() {		
+		createDefaultUser();
+		createAdminUser();
+	}
+	
+	private void createDefaultUser() {
+		Usuario user = userRepository.findByEmail("usuario@knowledgeplatform.com.br");
+		
+		if(user == null) {
+			user = createUser(true, "51999999999", "usuario@knowledgeplatform.com.br");
+			usuarioDao.save(user);
+		}
+	}
+	
+	private Usuario createUser(String primeiroNome, String sobrenome, Profissao profissao, String senha, String email) {
+		Usuario user = new Usuario(primeiroNome, sobrenome, profissao, bCryptPasswordEncoder.encode(senha), email);
+		return user;
+	}
+
+}

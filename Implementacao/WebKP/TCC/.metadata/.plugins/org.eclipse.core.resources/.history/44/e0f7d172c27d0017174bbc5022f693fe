@@ -1,0 +1,19 @@
+package br.com.knowl.platform.modelo;
+
+import javax.persistence.*;
+
+@Entity
+public class AssuntoGeral extends BaseEntity{
+	
+	private static final long serialVersionUID = -2915539820566393198L;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long idAssuntoGeral;
+	@OneToOne
+	@JoinColumn(name = "idUsuarioCriador")
+	private Usuario usuarioCriador;
+	@Column(name = "descricao")
+	private String descricao;
+	@Column(name = "flagDiscutido")
+	private boolean flagDiscutido;
+}

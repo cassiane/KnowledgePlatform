@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+<persistence version="2.0" ...">	
+<persistence-unit name="JPA20" transaction-type="RESOURCE_LOCAL">
+<class>br.com.exemplo1.jpa.Produto</class>	
+	
+ <properties> 	
+ <property name="javax.persistence.jdbc.url" 	
+ value="jdbc:mysql://host/db"/>	
+ <property name="javax.persistence.jdbc.user" value=”user"/>	
+ <property name="javax.persistence.jdbc.driver" 	
+ value="com.mysql.jdbc.Driver"/>	
+ <property name="javax.persistence.jdbc.password" value=”senha"/>	
+ 	
+ <property name="hibernate.hbm2ddl.auto" value="create"/>	
+ <property name="hibernate.show_sql" value="true"/>	
+ <property name="hibernate.format-sql" value="true"/>	
+ </properties>	
+</persistence-unit>
