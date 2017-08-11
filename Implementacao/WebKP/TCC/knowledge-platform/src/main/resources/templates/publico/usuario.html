@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/layouts/layout"
+      th:with="title=#{title.usuario}">
+       
+	<th:block layout:fragment="content">
+		  <form id="form-1" th:object="${usuario}" th:action="@{/publico/usuario/}" method="post" data-toggle="validator" role="form">
+			  <input type="hidden" th:field="*{codigo}" />
+			  <input type="hidden" th:field="*{ativo}" />
+			  <input type="hidden" th:field="*{version}" />
+			  <input type="hidden" th:value="${destinoSalvar}" name="destinoSalvar" />
+			  
+		  	  <div th:if="${#fields.hasErrors('global')}" class="alert alert-danger fade in">
+		  	  	<a href="#" class="close" data-dismiss="alert">&times;</a>
+			  	<ul >
+				  <li th:each="err : ${#fields.errors('global')}" th:text="${err}">Ops. Aconteceu algum erro</li>
+				  
+<!-- 				   <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr"> -->
+<!-- 				        <span th:text="${e.global}? '*' : ${e.global}">The field name</span> | -->
+<!-- 				        ::<span th:text="${e.code}">The error message</span>:: -->
+<!-- 				        <span th:text="${e.message}">The error message</span> -->
+<!-- 				    </li> -->
+				</ul>
+			  </div>
+			  
+			  <div class="form-group" th:classappend="${#fields.hasErrors('nome')} ? 'has-error has-feedback' : ''"> 
+				  <label class="control-label" id="label-nome" for="nome" th:text="#{label.nome}"></label>
+	    		  <input type="text" class="form-control" th:field="*{nome}" th:placeholder="#{label.nome}" required="required" pattern=".{10,}" th:title="#{usuario.nome.title}" />
+    			  <div class="help-block with-errors"><span th:errors="*{nome}" ></span></div>
+			  </div> 
+			  
+			  <div class="form-group" th:classappend="${#fields.hasErrors('nascimento')} ? 'has-error has-feedback' : ''"> 
+				  <label class="control-label" id="label-nome" for="nome" th:text="#{label.nascimento}"></label>
+	    		  <input type="date" class="form-control" th:field="*{nascimento}" th:placeholder="#{label.nascimento}" 
+	    		  		 required="required" th:title="#{usuario.nascimento.title}" />
+    			  <div class="help-block with-errors"><span th:errors="*{nascimento}" ></span></div>
+			  </div> 
+			  
+			  <div class="form-group" th:classappend="${#fields.hasErrors('celular')} ? 'has-error has-feedback' : ''"> 
+				  <label class="control-label" id="label-nome" for="nome" th:text="#{label.celular}"></label>
+	    		  <input type="number" class="form-control" th:field="*{celular}" th:placeholder="#{label.celular}" required="required" th:title="#{usuario.celular.title}" />
+    			  <div class="help-block with-errors"><span th:errors="*{celular}" ></span></div>
+			  </div> 
+			  
+			  <div class="form-group" th:classappend="${#fields.hasErrors('idioma')} ? 'has-error has-feedback' : ''"> 
+				  <label class="control-label" id="label-nome" for="nome" th:text="#{label.idioma}"></label>
+				  <select class="form-control" th:field="*{idioma}" required="required" th:title="#{usuario.idioma.title}">
+				  	<option value="pt_BR" th:text="#{lang.br}" ></option>
+				  	<option value="en_US" th:text="#{lang.eng}" ></option>
+				  </select>
+    			  <div class="help-block with-errors"><span th:errors="*{idioma}" ></span></div>
+			  </div> 
+			  
+			  <div class="form-group" th:classappend="${#fields.hasErrors('email')} ? 'has-error has-feedback' : ''">
+				  <label class="control-label" id="label-email" for="email"  th:text="#{label.email}"></label>
+	    		  <input type="email" class="form-control" th:field="*{email}" th:placeholder="#{label.email}" required="required" />
+    			  <div class="help-block with-errors"><span th:errors="*{email}" ></span></div>
+			  </div>
+			  
+			  <div class="form-group" th:classappend="${#fields.hasErrors('senha')} ? 'has-error has-feedback' : ''">
+				  <label class="control-label" id="label-senha" for="senha" th:text="#{label.senha}"></label>
+	    		  <input type="password" class="form-control" th:field="*{senha}" th:placeholder="#{label.senha}" required="required"/>
+    			  <div class="help-block with-errors"><span th:errors="*{senha}" ></span></div>
+			  </div>
+			  
+			  <div class="form-group">
+				  <label class="control-label" id="label-confirmaSenha" for="confirmaSenha" th:text="#{label.confirma.senha}"></label>
+	    		  <input type="password" class="form-control" name="confirmaSenha" id="confirmaSenha" th:value="${confirmaSenha}" th:placeholder="#{label.confirma.senha}" required="required" />
+    			  <div class="help-block with-errors"></div>
+			  </div>
+			  <button type="submit" class="btn btn-primary" th:text="#{botao.gravar}"></button>
+		  </form>
+	</th:block>
+</html>
