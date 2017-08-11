@@ -5,4 +5,4 @@
  * @author cassiane.santos
  *
  */
-package br.com.knowl.platform.exception;
+package br.com.knowledge.platform.exception;
