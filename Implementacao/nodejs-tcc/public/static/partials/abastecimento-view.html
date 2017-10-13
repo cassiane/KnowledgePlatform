@@ -1,0 +1,31 @@
+<table class="table abastecimentotable">
+    <tr>
+        <td><h3>Abastecimento</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Documento Automação</td>
+        <td>{{abastecimento.document_number}}</td>
+    </tr>
+    <tr>
+        <td>Documento Consumidor</td>
+        <td>{{abastecimento.consumer_identification}}</td>
+    </tr>
+    <tr>
+        <td>Bomba</td>
+        <td>{{abastecimento.details.fuel_pump_code}}</td>
+    </tr>
+    <tr>
+        <td>Valor (R$)</td>
+        <td>{{abastecimento.amount}}</td>
+    </tr>
+    <tr>
+        <td>Volume Abastecido (Litros)</td>
+        <td>{{abastecimento.details.quantity}}</td>
+    </tr>
+    <tr>
+        <td>Frentista</td>
+        <td>{{abastecimento.details.vendor}}</td>
+    </tr>
+</table>
+

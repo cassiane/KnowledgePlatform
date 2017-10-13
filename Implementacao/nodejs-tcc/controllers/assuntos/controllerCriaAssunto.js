@@ -1,12 +1,30 @@
-var Assunto = require('../../models/assuntos/modelAssunto');
-module.exports = function(req, res){
-      var data = new Assunto({
-        assunto: req.body.assunto,
-        usuarioCriador: req.body.usuarioCriador
+module.exports = function (req, res) {
+  const db = req.app.locals.db;
+  db.collection('Assuntos').count(function (err, count) {
+    if (err) res.sendStatus(500);
+
+    var query = { assunto: req.body.assunto };
+    db.collection('Assuntos').find(query).toArray(function (err, result) {
+      if (err) throw err;
+      if (result != undefined) {
+        var response = {
+          'status': '200',
+          'mensagem': 'Este assunto já foi sugerido ! Experimente votar nele ou procurar uma página referente!'
+        };
+        res.send(response);
+      } else {
+        db.collection('Assuntos', function (err, collection) {
+          if (err) res.sendStatus(500)
+          res.sendStatus(204);
+
+          collection.insert({
+            id: count + 1,
+            assunto: req.body.assunto,
+            votos: {}
+          });
+          console.log('Inserido');
         });
-        data.save(function(err) {
-          if (err)
-            res.send(err);
-          res.json({ message: 'Novo Assunto', data: data });
-        });
-    };
+      }
+    });
+  });
+};

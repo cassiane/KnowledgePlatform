@@ -1,24 +1,9 @@
 module.exports = {
-    getUsuarios: function (req, res) {
-        res.json({ message: "rota para GET do /usuarios" })
-    },
-    //require('./controllers/usuarios/controllerListaUsuario'),
-    postUsuarios: function (req, res) {
-        res.json({ message: "rota para GET do /usuarios" })
-    },
-    //require('./controllers/usuarios/controllerCriaUsuario')
-    /*login: require('./controllers/autenticação/controllerLogin'),
+    getUsuarios: require('./controllers/usuarios/controllerListaUsuario'),
+    postUsuarios: require('./controllers/usuarios/controllerListaUsuario'),
+    login: require('./controllers/autenticacao/controllerLogin'),
     postAssuntos: require('./controllers/assuntos/controllerCriaAssunto'),
-    getAssuntos: function (req, res) {
-        res.json({ message: "rota para GET do /assuntos" })
-    },
-    postVotarAssunto: function (req, res) {
-        res.json({ message: "rota para POST do /assuntos/votar" })
-    },
-    postNotificacao: function (req, res) {
-        res.json({ message: "rota para POST do /notificacao" })
-    },
-    getNotificacao: function (req, res) {
-        res.json({ message: "rota para GET do /notificacao" })
-    },*/
-}
+    getAssuntos: require('./controllers/assuntos/controllerListaAssuntos'),
+    postVotarAssunto: require('./controllers/assuntos/controllerVotarAssunto'),
+    postNotificacao: require('./controllers/notificacoes/controllerCriaNotificacao'),
+    getNotificacao: require('./controllers/notificacoes/controllerListaNotificacao')};
