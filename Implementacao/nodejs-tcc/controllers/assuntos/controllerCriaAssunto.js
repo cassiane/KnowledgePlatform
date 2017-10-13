@@ -6,13 +6,7 @@ module.exports = function (req, res) {
     var query = { assunto: req.body.assunto };
     db.collection('Assuntos').find(query).toArray(function (err, result) {
       if (err) throw err;
-      if (result != undefined) {
-        var response = {
-          'status': '200',
-          'mensagem': 'Este assunto já foi sugerido ! Experimente votar nele ou procurar uma página referente!'
-        };
-        res.send(response);
-      } else {
+      if (result != null && result.length == 0) {
         db.collection('Assuntos', function (err, collection) {
           if (err) res.sendStatus(500)
           res.sendStatus(204);
@@ -24,6 +18,12 @@ module.exports = function (req, res) {
           });
           console.log('Inserido');
         });
+      } else {
+        var response = {
+          'status': '200',
+          'mensagem': 'Este assunto já foi sugerido ! Experimente votar nele ou procurar uma página referente!'
+        };
+        res.send(response);
       }
     });
   });

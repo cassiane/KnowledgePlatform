@@ -35,7 +35,3 @@ MongoClient.connect('mongodb://root:root@ds117625.mlab.com:17625/knowkedgeplatfo
         console.log("iniciado na porta 3000");
     }
 });
-
-
-
-
