@@ -4,7 +4,7 @@ var express = require("express"),
     MongoClient = require('mongodb').MongoClient,
     router = express.Router();
 //db
-var urldb = 'mongodb://root:root@ds117625.mlab.com:17625/knowkedgeplatform';//coloque a url do db aqui
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -22,11 +22,12 @@ router.route('/assuntos')
     .get(rotas.getAssuntos)
     .post(rotas.postAssuntos)
     .post(rotas.postVotarAssunto);
-router.route('/notificacao')
+router.route('/notificacoes')
     .post(rotas.postNotificacao)
-    .get(rotas.getNotificacao);
+    .get(rotas.getNotificacoes);
 
-MongoClient.connect('mongodb://root:root@ds117625.mlab.com:17625/knowkedgeplatform', function (err, db) {
+var urldb = 'mongodb://root:root@ds117625.mlab.com:17625/knowkedgeplatform';
+MongoClient.connect(urldb, function (err, db) {
     if (err) {
         console.log(err)
     } else {

@@ -5,6 +5,5 @@ module.exports = function (req, res) {
             res.sendStatus(500);
         }
         res.send(result);
-        db.close();
     });
 };

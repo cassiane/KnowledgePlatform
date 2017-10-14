@@ -4,7 +4,7 @@ module.exports = function (req, res) {
     if (err) res.sendStatus(500);
     var query = { email: req.body.email };
     db.collection('Usuarios').find(query).toArray(function (err, result) {
-      if (err) throw err;
+      if (err) res.sendStatus(500);
       if (result != null && result.length == 0) {
         db.collection('Usuarios', function (err, collection) {
           if (err) res.sendStatus(500);
@@ -14,7 +14,15 @@ module.exports = function (req, res) {
             email: req.body.email,
             senha: req.body.senha
           });
+          res.sendStatus(204);
         });
+      } else {
+        res.send(
+          {
+            status: 200,
+            mensagem: 'Este email já está sendo utilizado.'
+          }
+        )
       }
     });
   });
