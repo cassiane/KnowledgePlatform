@@ -1,0 +1,34 @@
+<table class="table notificacaotable">
+    <tr ng-repeat="notificacao in notificacoes">
+        <td>
+            <a class="dropdown-item" href="#">
+                <span class="text-success">
+                    <!--TODO Nome do remetente -->
+                    <strong>Texto: {{notificao.texto}}</strong>
+                </span>
+                <!--TODO Data e hora da notificação -->
+                <span class="small float-right text-muted">11:21 AM</span>
+                <!--TODO Mensagem da notificação -->
+                <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+                <div class="dropdown-divider"></div>
+            </a>
+        </td>
+    </tr>
+    <a class="dropdown-item small" href="#">Ver todas as notificações</a>
+</table>
+
+
+
+
+
+
+<!-- <a ui-sref="newAbastecimento" class="btn-primary btn-lg nodecoration">Novo Abastecimento</a>
+<table class="table abastecimentotable">
+    <tr ng-repeat="notificacao in notificacoes">
+        <td>Texto: {{notificao.texto}} </td>
+        <!-- <td>
+            <a class="btn btn-primary" ui-sref="viewAbastecimento({id:abastecimento.id})">Abrir</a>
+            <a class="btn btn-danger"  ng-click="deleteAbastecimento(abastecimento)">Excluir</a>
+        </td> -->
+    <!-- </tr>
+</table> -->

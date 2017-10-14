@@ -1,14 +1,10 @@
-/**
- * Created by Sandeep on 01/06/14.
- */
-
-angular.module('abastecimentoApp.services',[]).factory('Assunto',function($resource, $http, constantService){
+angular.module('abastecimentoApp.servicesNotificacoes',[]).factory('Notificacao',function($resource, $http, constantService){
     return {
         query: query        
     }    
 
     function query(callback) {
-        $http.get(constantService.baseURL + '/assuntos')
+        $http.get(constantService.baseURL + '/notificacoes')
         .then(function(response) {
             if (callback){
                 callback(response.data);

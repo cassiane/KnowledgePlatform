@@ -25,13 +25,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                    <a class="nav-link" ui-sref="abastecimentos">
+                    <a class="nav-link" ui-sref="index">
                         <i class="fa fa-fw fa-dashboard"></i>
                         <span class="nav-link-text">Assuntos</span>
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                    <a class="nav-link" ui-sref="abastecimentos">
+                    <a class="nav-link" ui-sref="index">
                         <i class="fa fa-fw fa-dashboard"></i>
                         <span class="nav-link-text">Páginas</span>
                     </a>
@@ -59,28 +59,7 @@
                     <div class="dropdown-menu" aria-labelledby="alertsDropdown">
                         <h6 class="dropdown-header">Novas notificações:</h6>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <span class="text-success">
-                                <!--TODO Nome do remetente -->
-                                <strong> Status Update</strong>
-                            </span>
-                            <!--TODO Data e hora da notificação -->
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <!--TODO Mensagem da notificação -->
-                            <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-                        </a>
-                        <!--Classe que divide as notificações -->
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <span class="text-sucess">
-                                <strong> Status Update</strong>
-                            </span>
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <!--TODO ver todas as notificações -->
-                        <a class="dropdown-item small" href="#">Ver todas as notificações</a>
+                        <div ui-view="notificacoes"></div>                        
                     </div>
                 </li>
                 <!--TODO por um submit no botão pra fazer 
@@ -152,6 +131,7 @@
         <script type="text/javascript" src="static/js/app.js"></script>
         <script type="text/javascript" src="static/js/controllers.js"></script>
         <script type="text/javascript" src="static/js/services.js"></script>
+        <script type="text/javascript" src="static/js/servicesNotificacoes.js"></script>
         <script type="text/javascript" src="static/js/directives.js"></script>
         <script type="text/javascript" src="static/js/filters.js"></script>
         <script type="text/javascript" src="static/lib/angular-ui-router.min.js"></script>
