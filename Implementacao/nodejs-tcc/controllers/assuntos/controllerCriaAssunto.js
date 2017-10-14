@@ -3,7 +3,7 @@ module.exports = function (req, res) {
   db.collection('Assuntos').count(function (err, count) {
     if (err) res.sendStatus(500);
 
-    var query = { assunto: req.body.assunto };
+    var query = { assuntoDescricao: req.body.assunto };
     db.collection('Assuntos').find(query).toArray(function (err, result) {
       if (err) throw err;
       if (result != null && result.length == 0) {

@@ -15,15 +15,16 @@ app.use("/", express.static("public"));
 var rotas = require('./rotas')
 router.route('/usuarios')
     .get(rotas.getUsuarios)
-    .post(rotas.postUsuarios),
-    router.route('/login')
-        .post(rotas.login);
+    .post(rotas.postUsuarios);
+router.route('/login')
+    .post(rotas.login)
 router.route('/assuntos')
     .get(rotas.getAssuntos)
     .post(rotas.postAssuntos)
     .post(rotas.postVotarAssunto);
 router.route('/notificacoes')
-    .post(rotas.postNotificacao)
+    .post(rotas.postNotificacao);
+router.route('/notificacoes/:usuarioId')
     .get(rotas.getNotificacoes);
 
 var urldb = 'mongodb://root:root@ds117625.mlab.com:17625/knowkedgeplatform';

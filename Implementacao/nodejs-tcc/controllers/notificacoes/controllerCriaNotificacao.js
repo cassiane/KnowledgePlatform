@@ -7,9 +7,12 @@ module.exports = function (req, res) {
       if (err) res.sendStatus(500)      
       collection.insert({
         id: count + 1,
-        usuarioRemetente: req.body.usuarioRemetente,
-        usuarioDestinatario: req.body.usuarioDestinatario,
-        assunto: req.body.assunto,
+        usuarioRemetenteId: req.body.usuarioRemetenteId,
+        usuarioRemetenteNome: req.body.usuarioRemetenteNome,
+        usuarioDestinatarioId: req.body.usuarioDestinatarioId,
+        usuarioDestinatarioNome: req.body.usuarioDestinatarioNome,
+        assuntoId: req.body.assuntoId,
+        assuntoDescricao: req.body.assuntoDescricao,
         texto: req.body.texto
       });
       res.sendStatus(204);

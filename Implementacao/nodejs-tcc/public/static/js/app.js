@@ -19,6 +19,5 @@ angular.module('abastecimentoApp').config(function($stateProvider,$httpProvider)
         }
     });
 }).run(function($state){
-   //$state.go('abastecimentos');
    $state.go('index');
 });
