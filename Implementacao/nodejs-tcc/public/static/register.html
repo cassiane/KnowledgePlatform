@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="appAbastecimento">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SB Admin - Start Bootstrap Template</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Criar nova conta</div>
+      <div class="card-body">
+        <form class="form-horizontal" role="form" ng-submit="register()">
+          <div ng-include="'partials/formUsuario.html'"></div>
+        </form>
+        <!-- <div class="text-center">
+          <a class="d-block small mt-3" href="login.html">Fazer login</a>
+          <a class="d-block small" href="forgot-password.html">Esqueceu sua senha?</a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="static/lib/angular.min.js"></script>
+  <script type="text/javascript" src="static/js/app.js"></script>
+  <script type="text/javascript" src="static/js/controllers.js"></script>
+  <script type="text/javascript" src="static/js/services.js"></script>
+  <script type="text/javascript" src="static/js/servicesNotificacoes.js"></script>
+  <script type="text/javascript" src="static/js/servicesUsuarios.js"></script>
+  <script type="text/javascript" src="static/js/directives.js"></script>
+  <script type="text/javascript" src="static/js/filters.js"></script>
+  <script type="text/javascript" src="static/lib/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="static/lib/angular-resource.min.js"></script>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/popper/popper.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="static/js/sb-admin.min.js"></script>
+  <!-- Custom scripts for this page-->
+  <script src="static/js/sb-admin-datatables.min.js"></script>
+</body>
+
+</html>

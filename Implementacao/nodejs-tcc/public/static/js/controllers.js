@@ -9,8 +9,23 @@ angular.module('abastecimentoApp.controllers', [])
             $scope.assuntos = response;
         });
     }).controller('NotificacaoListController', function ($scope, $state, popupService, $window, Notificacao) {
-        $scope.usuario = "2";
-        Notificacao.get($scope.usuario, function (response) {            
+        $scope.usuario = "1";
+        Notificacao.get($scope.usuario, function (response) {
             $scope.notificacoes = response;
         });
+    }).controller('LoginController', function ($scope, $state, popupService, $window, Usuario) {
+
+        $scope.login = function () {
+            Usuario.get($scope.usuario.email, $scope.usuario.senha, function (response) {
+                $scope.usuario = response;
+                $state.go('index');
+            })
+        };
+    }).controller('UsuarioCreateController', function ($scope, $state, popupService, $window, Usuario) {
+        $scope.usuario = new Object();
+        $scope.addUsuario = function () {
+            Usuario.add($scope.usuario, function (response) {
+                $state.go('login');
+            });
+        }
     });
