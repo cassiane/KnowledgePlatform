@@ -34,3 +34,27 @@ ul {
 .message-notificacao {
     white-space: pre-wrap;
 }
+
+/* layout.css Style */
+.upload-drop-zone {
+    height: 200px;
+    border-width: 2px;
+    margin-bottom: 20px;
+  }
+  
+  /* skin.css Style*/
+  .upload-drop-zone {
+    color: #ccc;
+    border-style: dashed;
+    border-color: #ccc;
+    line-height: 200px;
+    text-align: center
+  }
+  .upload-drop-zone.drop {
+    color: #222;
+    border-color: #222;
+  }
+
+  /* .btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
+  .btn-labeled {padding-top: 0;padding-bottom: 0;}
+  .btn { margin-bottom:10px; } */

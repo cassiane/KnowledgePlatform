@@ -21,6 +21,7 @@ router.route('/login/email=:email&senha=:senha')
 router.route('/assuntos')
     .get(rotas.getAssuntos)
     .post(rotas.postAssuntos)
+router.route('/assuntos/votarassunto')
     .post(rotas.postVotarAssunto);
 router.route('/notificacoes')
     .post(rotas.postNotificacao);

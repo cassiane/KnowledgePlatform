@@ -24,13 +24,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Assunto">
                     <a class="nav-link" ui-sref="index">
                         <i class="fa fa-fw fa-dashboard"></i>
                         <span class="nav-link-text">Assuntos</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Páginas">
                     <a class="nav-link" ui-sref="index">
                         <i class="fa fa-fw fa-dashboard"></i>
                         <span class="nav-link-text">Páginas</span>
@@ -59,7 +59,7 @@
                     <div class="dropdown-menu" aria-labelledby="alertsDropdown">
                         <h6 class="dropdown-header">Novas notificações:</h6>
                         <div class="dropdown-divider"></div>
-                        <div ui-view="notificacoes"></div>                        
+                        <div ui-view="notificacoes"></div>
                     </div>
                 </li>
                 <!--TODO por um submit no botão pra fazer 
@@ -120,11 +120,7 @@
         </div>
         <!-- Colocar a tela de listagem de assuntos aqui -->
         <div class="container">
-            <div class="row top-buffer">
-                <div class="col-xs-8 col-xs-offset-2">
-                    <div ui-view></div>
-                </div>
-            </div>
+            <div ui-view></div>
         </div>
 
         <script type="text/javascript" src="static/lib/angular.min.js"></script>
@@ -151,4 +147,5 @@
         <!-- Custom scripts for this page-->
         <script src="static/js/sb-admin-datatables.min.js"></script>
 </body>
+
 </html>

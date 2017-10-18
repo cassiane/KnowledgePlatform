@@ -28,4 +28,10 @@ angular.module('abastecimentoApp.controllers', [])
                 $state.go('login');
             });
         }
+    }).controller('AssuntoCreatePageController', function($scope, $state, Assunto){
+        $scope.createPageAssunto = function(){
+            Assunto.createPageAssunto($scope.assunto, function(response){
+                $scope.assunto = response;
+            })
+        };
     });

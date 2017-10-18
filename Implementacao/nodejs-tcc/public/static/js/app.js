@@ -17,6 +17,10 @@ angular.module('abastecimentoApp').config(function ($stateProvider, $httpProvide
                 controller: 'NotificacaoListController'
             }
         }
+    }).state('createPageAssunto', {
+        url:'/createPageAssunto', 
+        templateUrl: 'static/partials/assunto-createPage.html',
+        controller: 'AssuntoCreatePageController'    
     })
 }).run(function ($state) {
     $state.go('index');

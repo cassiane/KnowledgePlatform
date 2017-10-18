@@ -14,7 +14,7 @@ module.exports = function (req, res) {
           collection.insert({
             id: count + 1,
             assunto: req.body.assunto,
-            votos: {}
+            votos: []
           });
           console.log('Inserido');
         });
