@@ -12,7 +12,8 @@ module.exports = function (req, res) {
             id: count + 1,
             nome: req.body.nome,
             email: req.body.email,
-            senha: req.body.senha
+            senha: req.body.senha,
+            areas: req.body.areas
           });
           res.sendStatus(204);
         });

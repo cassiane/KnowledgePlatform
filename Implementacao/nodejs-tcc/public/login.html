@@ -1,0 +1,27 @@
+<div class="bg-dark">
+  <div ui-view="register"></div>
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Email" ng-model="usuario.email">
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Senha" ng-model="usuario.senha">
+          </div>
+          <!-- <input type="submit" class="btn btn-primary" value="Login" ui-sref('login')/> -->
+          <form class="form-horizontal" role="form">
+            <a class="btn btn-primary btn-block" ui-sref="login(usuario)">Login</a>
+          </form>
+        </form>
+        <div class="text-center">
+          <!-- <a ui-sref="register" class="btn-primary btn-lg nodecoration">Criar uma conta</a> -->
+          <a class="d-block small mt-3" href="register.html">Criar uma conta</a>
+          <a class="d-block small" href="forgot-password.html">Esqueceu a senha?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

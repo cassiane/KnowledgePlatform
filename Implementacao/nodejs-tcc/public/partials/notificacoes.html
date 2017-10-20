@@ -1,0 +1,26 @@
+<ul ng-repeat="notificacao in notificacoes">
+    <li>
+        <a class="dropdown-item" ui-sref="createPageAssunto()">
+            <div class="row">
+                <div class="col-sm-6">
+                    <span class="text-info">
+                        <strong>{{notificacao.usuarioRemetente.nome}}</strong>
+                    </span>
+                </div>
+                <div class="col-sm-6">
+                    <span class="small float-right text-muted">11:21 AM</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="text-info">
+                        {{notificacao.assunto.assunto}}
+                    </span>
+                    {{notificacao.texto}}
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
+        </a>
+    </li>
+</ul>
+<a class="dropdown-item small" href="#">Ver todas as notificações</a>

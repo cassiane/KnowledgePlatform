@@ -12,9 +12,10 @@ module.exports = function (req, res) {
           res.sendStatus(204);
 
           collection.insert({
-            id: count + 1,
+            id: (count + 1).toString(),
             assunto: req.body.assunto,
-            votos: []
+            votos: [],
+            areas: req.body.areas
           });
           console.log('Inserido');
         });
